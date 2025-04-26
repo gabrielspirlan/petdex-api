@@ -9,4 +9,5 @@ public class Raca {
     @Id
     private String id;
     private String nome;
+    private Especie especie;
 }

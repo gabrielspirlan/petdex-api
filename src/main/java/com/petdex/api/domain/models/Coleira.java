@@ -8,5 +8,5 @@ public class Coleira {
     @Id
     private String id;
     private String descricao;
-    // Vincular ao Animal
+    private String animalId;
 }

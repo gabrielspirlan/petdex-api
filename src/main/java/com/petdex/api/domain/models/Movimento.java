@@ -16,6 +16,7 @@ public class Movimento {
     private Double giroscopioX;
     private Double giroscopioY;
     private Double giroscopioZ;
-
+    private String animalId;
+    private String coleiraId;
 
 }

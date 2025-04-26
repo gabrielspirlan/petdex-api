@@ -14,4 +14,6 @@ public class Animal {
     private String sexo;
     private Float peso;
     private Boolean castrado;
+    private String usuarioId;
+    private Raca raca;
 }

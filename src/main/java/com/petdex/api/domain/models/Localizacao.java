@@ -12,4 +12,6 @@ public class Localizacao {
     private Date data;
     private Double latitude;
     private Double longitude;
+    private String animalId;
+    private String coleiraId;
 }
