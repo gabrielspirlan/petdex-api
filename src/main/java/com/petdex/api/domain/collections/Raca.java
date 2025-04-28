@@ -1,4 +1,4 @@
-package com.petdex.api.domain.models;
+package com.petdex.api.domain.collections;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
