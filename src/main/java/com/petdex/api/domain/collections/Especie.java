@@ -10,4 +10,32 @@ public class Especie {
     private String id;
     @NotBlank(message = "Nome não pode ser nulo ou vazio")
     private String nome;
+
+    public Especie() {
+    }
+
+    public Especie(String nome) {
+        this.nome = nome;
+    }
+
+    public Especie(String id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }

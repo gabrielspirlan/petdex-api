@@ -1,48 +1,43 @@
-package com.petdex.api.domain.collections;
+package com.petdex.api.domain.contracts.dto.Movimento;
 
-import jakarta.validation.constraints.NotBlank;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.util.Date;
 
-@Document(collection = "movimentos")
-public class Movimento {
-    @Id
-    private String id;
+@Schema(name = "Requisição Movimento", description = "Informações contidas nas requisições da API envolvendo a Localização")
+public class MovimentoReqDTO {
 
-    @NotBlank(message = "Data não pode ser nulo ou vazio")
+    @Schema(description = "Data/Hora que foi feito a coleta do movimento", example = "", requiredMode = Schema.RequiredMode.REQUIRED)
     private Date date;
 
-    @NotBlank(message = "acelerometroX não pode ser nulo ou vazio")
+    @Schema(description = "Valor de aceleração no eixo X no momento da coleta", example = "", requiredMode = Schema.RequiredMode.REQUIRED)
     private Double acelerometroX;
 
-    @NotBlank(message = "acelerometroY não pode ser nulo ou vazio")
+    @Schema(description = "Valor de aceleração no eixo Y no momento da coleta", example = "", requiredMode = Schema.RequiredMode.REQUIRED)
     private Double acelerometroY;
 
-    @NotBlank(message = "acelerometroZ não pode ser nulo ou vazio")
+    @Schema(description = "Valor de aceleração no eixo Z no momento da coleta", example = "", requiredMode = Schema.RequiredMode.REQUIRED)
     private Double acelerometroZ;
 
-    @NotBlank(message = "giroscopioX não pode ser nulo ou vazio")
+    @Schema(description = "Valor da posição do giroscópio no eixo X no momento da coleta", example = "", requiredMode = Schema.RequiredMode.REQUIRED)
     private Double giroscopioX;
 
-    @NotBlank(message = "giroscopioY não pode ser nulo ou vazio")
+    @Schema(description = "Valor da posição do giroscópio no eixo Y no momento da coleta", example = "", requiredMode = Schema.RequiredMode.REQUIRED)
     private Double giroscopioY;
 
-    @NotBlank(message = "giroscopioZ não pode ser nulo ou vazio")
+    @Schema(description = "Valor da posição do giroscópio no eixo Z no momento da coleta", example = "", requiredMode = Schema.RequiredMode.REQUIRED)
     private Double giroscopioZ;
 
-    @NotBlank(message = "animalId não pode ser nulo ou vazio")
+    @Schema(description = "ID do Animal que foi feito a coleta do movimento", example = "", requiredMode = Schema.RequiredMode.REQUIRED)
     private String animalId;
 
-    @NotBlank(message = "coleiraId não pode ser nulo ou vazio")
+    @Schema(description = "ID da coleira que fez a coleta do movimento do animal", example = "", requiredMode = Schema.RequiredMode.REQUIRED)
     private String coleiraId;
 
-
-    public Movimento() {
+    public MovimentoReqDTO() {
     }
 
-    public Movimento(Date date, Double acelerometroX, Double acelerometroY, Double acelerometroZ, Double giroscopioX, Double giroscopioY, Double giroscopioZ, String animalId, String coleiraId) {
+    public MovimentoReqDTO(Date date, Double acelerometroX, Double acelerometroY, Double acelerometroZ, Double giroscopioX, Double giroscopioY, Double giroscopioZ, String animalId, String coleiraId) {
         this.date = date;
         this.acelerometroX = acelerometroX;
         this.acelerometroY = acelerometroY;
@@ -52,27 +47,6 @@ public class Movimento {
         this.giroscopioZ = giroscopioZ;
         this.animalId = animalId;
         this.coleiraId = coleiraId;
-    }
-
-    public Movimento(String id, Date date, Double acelerometroX, Double acelerometroY, Double acelerometroZ, Double giroscopioX, Double giroscopioY, Double giroscopioZ, String animalId, String coleiraId) {
-        this.id = id;
-        this.date = date;
-        this.acelerometroX = acelerometroX;
-        this.acelerometroY = acelerometroY;
-        this.acelerometroZ = acelerometroZ;
-        this.giroscopioX = giroscopioX;
-        this.giroscopioY = giroscopioY;
-        this.giroscopioZ = giroscopioZ;
-        this.animalId = animalId;
-        this.coleiraId = coleiraId;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public Date getDate() {

@@ -25,4 +25,62 @@ public class Batimento {
 
     @NotBlank(message = "coleiraId não pode ser nulo ou vazio")
     private String coleiraId;
+
+    public Batimento() {
+    }
+
+    public Batimento(Date data, Integer frequenciaMedia, String animalId, String coleiraId) {
+        this.data = data;
+        this.frequenciaMedia = frequenciaMedia;
+        this.animalId = animalId;
+        this.coleiraId = coleiraId;
+    }
+
+    public Batimento(String id, Date data, Integer frequenciaMedia, String animalId, String coleiraId) {
+        this.id = id;
+        this.data = data;
+        this.frequenciaMedia = frequenciaMedia;
+        this.animalId = animalId;
+        this.coleiraId = coleiraId;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public Integer getFrequenciaMedia() {
+        return frequenciaMedia;
+    }
+
+    public void setFrequenciaMedia(Integer frequenciaMedia) {
+        this.frequenciaMedia = frequenciaMedia;
+    }
+
+    public String getAnimalId() {
+        return animalId;
+    }
+
+    public void setAnimalId(String animalId) {
+        this.animalId = animalId;
+    }
+
+    public String getColeiraId() {
+        return coleiraId;
+    }
+
+    public void setColeiraId(String coleiraId) {
+        this.coleiraId = coleiraId;
+    }
 }

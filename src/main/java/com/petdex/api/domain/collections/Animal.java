@@ -29,4 +29,93 @@ public class Animal {
     private String usuarioId;
     @NotBlank(message = "Raca não pode ser nulo ou vazio")
     private Raca raca;
+
+
+    public Animal() {
+    }
+
+    public Animal(String id, String nome, Date dataNascimento, String sexo, Float peso, Boolean castrado, String usuarioId, Raca raca) {
+        this.id = id;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.sexo = sexo;
+        this.peso = peso;
+        this.castrado = castrado;
+        this.usuarioId = usuarioId;
+        this.raca = raca;
+    }
+
+    public Animal(String nome, Date dataNascimento, String sexo, Float peso, Boolean castrado, String usuarioId, Raca raca) {
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.sexo = sexo;
+        this.peso = peso;
+        this.castrado = castrado;
+        this.usuarioId = usuarioId;
+        this.raca = raca;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public Float getPeso() {
+        return peso;
+    }
+
+    public void setPeso(Float peso) {
+        this.peso = peso;
+    }
+
+    public Boolean getCastrado() {
+        return castrado;
+    }
+
+    public void setCastrado(Boolean castrado) {
+        this.castrado = castrado;
+    }
+
+    public String getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(String usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+
+    public Raca getRaca() {
+        return raca;
+    }
+
+    public void setRaca(Raca raca) {
+        this.raca = raca;
+    }
 }
