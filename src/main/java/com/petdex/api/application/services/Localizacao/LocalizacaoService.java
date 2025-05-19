@@ -2,8 +2,8 @@ package com.petdex.api.application.services.Localizacao;
 
 import com.petdex.api.application.services.ValidationService;
 import com.petdex.api.domain.collections.Localizacao;
-import com.petdex.api.domain.contracts.dto.Localizacao.LocalizacaoReqDTO;
-import com.petdex.api.domain.contracts.dto.Localizacao.LocalizacaoResDTO;
+import com.petdex.api.domain.contracts.dto.localizacao.LocalizacaoReqDTO;
+import com.petdex.api.domain.contracts.dto.localizacao.LocalizacaoResDTO;
 import com.petdex.api.domain.contracts.dto.PageDTO;
 import com.petdex.api.infrastructure.mongodb.LocalizacaoRepository;
 import org.modelmapper.ModelMapper;
@@ -40,7 +40,7 @@ public class LocalizacaoService implements ILocalizacaoService {
     }
 
     public Page<LocalizacaoResDTO> findAllByAnimalId(String animalId, PageDTO pageDTO) {
-
+        pageDTO.sortByNewest();
         Page<Localizacao> localizacaosPage = localizacaoRepository.findAllByAnimalId(animalId, pageDTO.mapPage());
 
         List<LocalizacaoResDTO> dtoList = localizacaosPage.getContent().stream()
@@ -51,7 +51,7 @@ public class LocalizacaoService implements ILocalizacaoService {
     }
 
     public Page<LocalizacaoResDTO> findAllByColeiraId(String coleiraId, PageDTO pageDTO) {
-
+        pageDTO.sortByNewest();
         Page<Localizacao> localizacaosPage = localizacaoRepository.findAllByColeiraId(coleiraId, pageDTO.mapPage());
 
         List<LocalizacaoResDTO> dtoList = localizacaosPage.getContent().stream()
@@ -60,4 +60,6 @@ public class LocalizacaoService implements ILocalizacaoService {
 
         return new PageImpl<LocalizacaoResDTO>(dtoList, pageDTO.mapPage(), localizacaosPage.getTotalElements());
     }
+
+
 }

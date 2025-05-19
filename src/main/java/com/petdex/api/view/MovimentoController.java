@@ -1,9 +1,8 @@
 package com.petdex.api.view;
 
 import com.petdex.api.application.services.Movimento.IMovimentoService;
-import com.petdex.api.domain.contracts.dto.Movimento.MovimentoReqDTO;
-import com.petdex.api.domain.contracts.dto.Movimento.MovimentoResDTO;
-import com.petdex.api.domain.contracts.dto.Movimento.MovimentoResDTO;
+import com.petdex.api.domain.contracts.dto.movimento.MovimentoReqDTO;
+import com.petdex.api.domain.contracts.dto.movimento.MovimentoResDTO;
 import com.petdex.api.domain.contracts.dto.PageDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

@@ -1,8 +1,8 @@
 package com.petdex.api.view;
 
 import com.petdex.api.application.services.Localizacao.ILocalizacaoService;
-import com.petdex.api.domain.contracts.dto.Localizacao.LocalizacaoReqDTO;
-import com.petdex.api.domain.contracts.dto.Localizacao.LocalizacaoResDTO;
+import com.petdex.api.domain.contracts.dto.localizacao.LocalizacaoReqDTO;
+import com.petdex.api.domain.contracts.dto.localizacao.LocalizacaoResDTO;
 import com.petdex.api.domain.contracts.dto.PageDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -44,6 +44,7 @@ public class LocalizacaoController {
     )
     @GetMapping("/animal/{idAnimal}")
     public ResponseEntity<Page<LocalizacaoResDTO>> findAllByAnimal(@PathVariable String idAnimal, @ParameterObject PageDTO pageDTO) {
+
         return new ResponseEntity<>(localizacaoService.findAllByAnimalId(idAnimal, pageDTO),
                 HttpStatus.OK
         );

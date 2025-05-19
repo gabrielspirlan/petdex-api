@@ -1,7 +1,7 @@
 package com.petdex.api.application.services.Movimento;
 
-import com.petdex.api.domain.contracts.dto.Movimento.MovimentoReqDTO;
-import com.petdex.api.domain.contracts.dto.Movimento.MovimentoResDTO;
+import com.petdex.api.domain.contracts.dto.movimento.MovimentoReqDTO;
+import com.petdex.api.domain.contracts.dto.movimento.MovimentoResDTO;
 import com.petdex.api.domain.contracts.dto.PageDTO;
 import org.springframework.data.domain.Page;
 

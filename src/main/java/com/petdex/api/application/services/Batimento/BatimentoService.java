@@ -1,25 +1,18 @@
 package com.petdex.api.application.services.Batimento;
 
 import com.petdex.api.application.services.ValidationService;
-import com.petdex.api.domain.collections.Animal;
 import com.petdex.api.domain.collections.Batimento;
-import com.petdex.api.domain.collections.Coleira;
-import com.petdex.api.domain.contracts.dto.Batimento.BatimentoReqDTO;
-import com.petdex.api.domain.contracts.dto.Batimento.BatimentoResDTO;
+import com.petdex.api.domain.contracts.dto.batimento.BatimentoReqDTO;
+import com.petdex.api.domain.contracts.dto.batimento.BatimentoResDTO;
 import com.petdex.api.domain.contracts.dto.PageDTO;
-import com.petdex.api.infrastructure.mongodb.AnimalRepository;
 import com.petdex.api.infrastructure.mongodb.BatimentoRepository;
-import com.petdex.api.infrastructure.mongodb.ColeiraRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class BatimentoService implements IBatimentoService {
@@ -47,7 +40,7 @@ public class BatimentoService implements IBatimentoService {
     }
 
     public Page<BatimentoResDTO> findAllByAnimalId(String animalId, PageDTO pageDTO) {
-
+        pageDTO.sortByNewest();
         Page<Batimento> batimentosPage = batimentoRepository.findAllByAnimalId(animalId, pageDTO.mapPage());
 
         List<BatimentoResDTO> dtoList = batimentosPage.getContent().stream()
@@ -58,7 +51,7 @@ public class BatimentoService implements IBatimentoService {
     }
 
     public Page<BatimentoResDTO> findAllByColeiraId(String coleiraId, PageDTO pageDTO) {
-
+        pageDTO.sortByNewest();
         Page<Batimento> batimentosPage = batimentoRepository.findAllByColeiraId(coleiraId, pageDTO.mapPage());
 
         List<BatimentoResDTO> dtoList = batimentosPage.getContent().stream()

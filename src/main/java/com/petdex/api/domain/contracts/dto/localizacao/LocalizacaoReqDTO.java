@@ -1,14 +1,11 @@
-package com.petdex.api.domain.contracts.dto.Localizacao;
+package com.petdex.api.domain.contracts.dto.localizacao;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.util.Date;
 
-@Schema(name = "Resposta Localização", description = "Informações contidas nas respostas da API envolvendo a Localização")
-public class LocalizacaoResDTO {
-
-    @Schema(description = "Código único identificador da localização", example = "", requiredMode = Schema.RequiredMode.REQUIRED)
-    private String id;
+@Schema(name = "Requisição Localização", description = "Informações contidas nas requisições da API envolvendo a Localização")
+public class LocalizacaoReqDTO {
 
     @Schema(description = "Data/Hora que foi realizado a coleta da localização", example = "", requiredMode = Schema.RequiredMode.REQUIRED)
     private Date data;
@@ -25,24 +22,15 @@ public class LocalizacaoResDTO {
     @Schema(description = "ID da coleira que fez a coleta da localização do animal", example = "", requiredMode = Schema.RequiredMode.REQUIRED)
     private String coleiraId;
 
-    public LocalizacaoResDTO() {
+    public LocalizacaoReqDTO() {
     }
 
-    public LocalizacaoResDTO(String id, Date data, Double latitude, Double longitude, String animalId, String coleiraId) {
-        this.id = id;
+    public LocalizacaoReqDTO(Date data, Double latitude, Double longitude, String animalId, String coleiraId) {
         this.data = data;
         this.latitude = latitude;
         this.longitude = longitude;
         this.animalId = animalId;
         this.coleiraId = coleiraId;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public Date getData() {

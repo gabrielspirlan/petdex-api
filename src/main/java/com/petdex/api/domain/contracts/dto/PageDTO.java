@@ -1,14 +1,18 @@
 package com.petdex.api.domain.contracts.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 public class PageDTO {
-
-    private int page;
-    private int size;
+    @Schema(description = "Página da requisição", example = "0")
+    private int page = 0;
+    @Schema(description = "Quantidade de elementos por página", example = "10")
+    private int size = 10;
+    @Schema(description = "Atributo pelo qual as respostas serão ordenadas")
     private String sortBy;
+    @Schema(description = "Direção da ordem (ASC ou DESC)")
     private String direction;
 
     public PageDTO() {
@@ -69,6 +73,24 @@ public class PageDTO {
         }
 
         return PageRequest.of(this.page, this.size);
+    }
+
+    public void sortByNewest() {
+        if(this.getSortBy() != null) {
+           if (this.getSortBy().isEmpty()) {
+               this.setSortBy("data");
+           }
+        } else {
+            this.setSortBy("data");
+        }
+
+        if(this.getDirection() != null) {
+            if (this.getDirection().isEmpty()) {
+                this.setDirection("desc");
+            }
+        } else {
+            this.setDirection("desc");
+        }
     }
 
 }

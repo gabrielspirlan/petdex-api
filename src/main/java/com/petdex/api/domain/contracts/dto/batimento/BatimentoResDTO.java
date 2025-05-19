@@ -1,4 +1,4 @@
-package com.petdex.api.domain.contracts.dto.Batimento;
+package com.petdex.api.domain.contracts.dto.batimento;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 

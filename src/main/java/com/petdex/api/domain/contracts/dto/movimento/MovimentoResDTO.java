@@ -1,4 +1,4 @@
-package com.petdex.api.domain.contracts.dto.Movimento;
+package com.petdex.api.domain.contracts.dto.movimento;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 

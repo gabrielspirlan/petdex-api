@@ -1,10 +1,9 @@
 package com.petdex.api.application.services.Batimento;
 
-import com.petdex.api.domain.contracts.dto.Batimento.BatimentoReqDTO;
-import com.petdex.api.domain.contracts.dto.Batimento.BatimentoResDTO;
+import com.petdex.api.domain.contracts.dto.batimento.BatimentoReqDTO;
+import com.petdex.api.domain.contracts.dto.batimento.BatimentoResDTO;
 import com.petdex.api.domain.contracts.dto.PageDTO;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 public interface IBatimentoService {
 

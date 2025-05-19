@@ -3,11 +3,10 @@ package com.petdex.api.config;
 import com.petdex.api.domain.collections.Batimento;
 import com.petdex.api.domain.collections.Localizacao;
 import com.petdex.api.domain.collections.Movimento;
-import com.petdex.api.domain.contracts.dto.Batimento.BatimentoReqDTO;
-import com.petdex.api.domain.contracts.dto.Localizacao.LocalizacaoReqDTO;
-import com.petdex.api.domain.contracts.dto.Movimento.MovimentoReqDTO;
+import com.petdex.api.domain.contracts.dto.batimento.BatimentoReqDTO;
+import com.petdex.api.domain.contracts.dto.localizacao.LocalizacaoReqDTO;
+import com.petdex.api.domain.contracts.dto.movimento.MovimentoReqDTO;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeMap;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
