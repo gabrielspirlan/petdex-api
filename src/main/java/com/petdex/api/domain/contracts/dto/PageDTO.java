@@ -92,5 +92,23 @@ public class PageDTO {
             this.setDirection("desc");
         }
     }
+     public void sortByName() {
+        if(this.getSortBy() != null) {
+           if (this.getSortBy().isEmpty()) {
+               this.setSortBy("nome");
+           }
+        } else {
+            this.setSortBy("nome");
+        }
+
+        if(this.getDirection() != null) {
+            if (this.getDirection().isEmpty()) {
+                this.setDirection("asc");
+            }
+        } else {
+            this.setDirection("asc");
+        }
+    }
+
 
 }
