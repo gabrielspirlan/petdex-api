@@ -1,4 +1,4 @@
-package com.petdex.api.application.services.Batimento;
+package com.petdex.api.application.services.batimento;
 
 import com.petdex.api.domain.contracts.dto.batimento.BatimentoReqDTO;
 import com.petdex.api.domain.contracts.dto.batimento.BatimentoResDTO;

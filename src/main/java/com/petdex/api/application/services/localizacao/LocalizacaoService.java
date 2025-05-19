@@ -1,4 +1,4 @@
-package com.petdex.api.application.services.Localizacao;
+package com.petdex.api.application.services.localizacao;
 
 import com.petdex.api.application.services.ValidationService;
 import com.petdex.api.domain.collections.Localizacao;

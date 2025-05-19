@@ -1,4 +1,4 @@
-package com.petdex.api.application.services.Batimento;
+package com.petdex.api.application.services.batimento;
 
 import com.petdex.api.application.services.ValidationService;
 import com.petdex.api.domain.collections.Batimento;

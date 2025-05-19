@@ -1,6 +1,6 @@
 package com.petdex.api.view;
 
-import com.petdex.api.application.services.Localizacao.ILocalizacaoService;
+import com.petdex.api.application.services.localizacao.ILocalizacaoService;
 import com.petdex.api.domain.contracts.dto.localizacao.LocalizacaoReqDTO;
 import com.petdex.api.domain.contracts.dto.localizacao.LocalizacaoResDTO;
 import com.petdex.api.domain.contracts.dto.PageDTO;

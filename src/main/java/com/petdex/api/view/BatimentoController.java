@@ -1,6 +1,6 @@
 package com.petdex.api.view;
 
-import com.petdex.api.application.services.Batimento.IBatimentoService;
+import com.petdex.api.application.services.batimento.IBatimentoService;
 import com.petdex.api.domain.contracts.dto.batimento.BatimentoReqDTO;
 import com.petdex.api.domain.contracts.dto.batimento.BatimentoResDTO;
 import com.petdex.api.domain.contracts.dto.PageDTO;

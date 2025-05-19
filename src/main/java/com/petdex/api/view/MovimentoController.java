@@ -1,6 +1,6 @@
 package com.petdex.api.view;
 
-import com.petdex.api.application.services.Movimento.IMovimentoService;
+import com.petdex.api.application.services.movimento.IMovimentoService;
 import com.petdex.api.domain.contracts.dto.movimento.MovimentoReqDTO;
 import com.petdex.api.domain.contracts.dto.movimento.MovimentoResDTO;
 import com.petdex.api.domain.contracts.dto.PageDTO;

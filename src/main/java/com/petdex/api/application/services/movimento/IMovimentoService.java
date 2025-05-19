@@ -1,4 +1,4 @@
-package com.petdex.api.application.services.Movimento;
+package com.petdex.api.application.services.movimento;
 
 import com.petdex.api.domain.contracts.dto.movimento.MovimentoReqDTO;
 import com.petdex.api.domain.contracts.dto.movimento.MovimentoResDTO;
