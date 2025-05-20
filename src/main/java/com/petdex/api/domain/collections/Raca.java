@@ -9,20 +9,20 @@ public class Raca {
     @Id
     private String id;
     private String nome;
-    private Especie especie;
+    private String especieId;
 
     public Raca() {
     }
 
-    public Raca(String nome, Especie especie) {
+    public Raca(String nome, String especieId) {
         this.nome = nome;
-        this.especie = especie;
+        this.especieId = especieId;
     }
 
-    public Raca(String id, String nome, Especie especie) {
+    public Raca(String id, String nome, String especieId) {
         this.id = id;
         this.nome = nome;
-        this.especie = especie;
+        this.especieId = especieId;
     }
 
     public String getId() {
@@ -41,11 +41,11 @@ public class Raca {
         this.nome = nome;
     }
 
-    public Especie getEspecie() {
-        return especie;
+    public String getEspecieId() {
+        return especieId;
     }
 
-    public void setEspecie(Especie especie) {
-        this.especie = especie;
+    public void setEspecieId(String especieId) {
+        this.especieId = especieId;
     }
 }

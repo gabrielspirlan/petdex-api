@@ -1,6 +1,6 @@
 package com.petdex.api.view;
 
-import com.petdex.api.application.services.usuario.UsuarioService;
+import com.petdex.api.application.services.usuario.IUsuarioService;
 import com.petdex.api.domain.contracts.dto.PageDTO;
 import com.petdex.api.domain.contracts.dto.usuario.UsuarioReqDTO;
 import com.petdex.api.domain.contracts.dto.usuario.UsuarioResDTO;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class UsuarioController {
 
     @Autowired
-    UsuarioService usuarioService;
+    IUsuarioService usuarioService;
 
     @GetMapping("/{id}")
     public ResponseEntity<UsuarioResDTO> findById (@PathVariable String id) {
@@ -26,8 +26,8 @@ public class UsuarioController {
         );
     }
 
-    @GetMapping("")
-    public ResponseEntity<Page<UsuarioResDTO>> findAll (@RequestParam @ParameterObject PageDTO pageDTO) {
+    @GetMapping()
+    public ResponseEntity<Page<UsuarioResDTO>> findAll (@ParameterObject PageDTO pageDTO) {
         return new ResponseEntity<>(
                 usuarioService.findAll(pageDTO),
                 HttpStatus.OK
@@ -50,6 +50,7 @@ public class UsuarioController {
         );
     }
 
+    @DeleteMapping("/{id}")
     public ResponseEntity delete (@PathVariable String id) {
         usuarioService.delete(id);
         return new ResponseEntity(HttpStatus.OK);

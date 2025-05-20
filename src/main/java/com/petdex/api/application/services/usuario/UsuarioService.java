@@ -9,9 +9,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UsuarioService implements IUsuarioService {
     @Autowired
     ModelMapper mapper;
@@ -29,7 +31,7 @@ public class UsuarioService implements IUsuarioService {
         pageDTO.sortByName();
 
         Page<Usuario> usuariosPage = usuarioRepository.findAll(pageDTO.mapPage());
-        List<UsuarioResDTO>  dtoList = usuariosPage.getContent().stream()
+        List<UsuarioResDTO> dtoList = usuariosPage.getContent().stream()
                 .map(b -> mapper.map(b, UsuarioResDTO.class))
                 .toList();
 
@@ -46,11 +48,11 @@ public class UsuarioService implements IUsuarioService {
 
         Usuario usuarioUpdate = usuarioRepository.findById(id).orElseThrow(() -> new RuntimeException("Não foi possível contrar um usuário com este ID: " + id));
 
-        if(!usuarioUpdate.getCpf().equals(usuarioReqDTO.getCpf())) usuarioUpdate.setCpf(usuarioReqDTO.getCpf());
-        if (!usuarioUpdate.getEmail().equals(usuarioReqDTO.getEmail())) usuarioUpdate.setEmail(usuarioReqDTO.getEmail());
-        if(!usuarioUpdate.getSenha().equals(usuarioReqDTO.getSenha())) usuarioUpdate.setSenha(usuarioReqDTO.getSenha());
-        if(!usuarioUpdate.getNome().equals(usuarioReqDTO.getNome())) usuarioUpdate.setNome(usuarioReqDTO.getNome());
-        if(!usuarioUpdate.getWhatsApp().equals(usuarioReqDTO.getWhatsApp())) usuarioUpdate.setWhatsApp(usuarioReqDTO.getWhatsApp());
+        if (usuarioReqDTO.getCpf() != null) usuarioUpdate.setCpf(usuarioReqDTO.getCpf());
+        if (usuarioReqDTO.getEmail() != null) usuarioUpdate.setEmail(usuarioReqDTO.getEmail());
+        if (usuarioReqDTO.getSenha() != null) usuarioUpdate.setSenha(usuarioReqDTO.getSenha());
+        if (usuarioReqDTO.getNome() != null) usuarioUpdate.setNome(usuarioReqDTO.getNome());
+        if (usuarioReqDTO.getWhatsApp() != null) usuarioUpdate.setWhatsApp(usuarioReqDTO.getWhatsApp());
 
         return mapper.map(usuarioRepository.save(mapper.map(usuarioUpdate, Usuario.class)), UsuarioResDTO.class);
     }

@@ -6,32 +6,32 @@ import java.util.Date;
 
 public class AnimalReqDTO {
 
-    private String nome;
+    private Raca nome;
     private Date dataNascimento;
-    private String sexo;
+    private Raca sexo;
     private Float peso;
     private Boolean castrado;
-    private String usuarioId;
-    private Raca raca;
+    private Raca usuarioId;
+    private Raca racaId;
 
     public AnimalReqDTO() {
     }
 
-    public AnimalReqDTO(String nome, Date dataNascimento, String sexo, Float peso, Boolean castrado, String usuarioId, Raca raca) {
+    public AnimalReqDTO(Raca nome, Date dataNascimento, Raca sexo, Float peso, Boolean castrado, Raca usuarioId, Raca racaId) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.sexo = sexo;
         this.peso = peso;
         this.castrado = castrado;
         this.usuarioId = usuarioId;
-        this.raca = raca;
+        this.racaId = racaId;
     }
 
-    public String getNome() {
+    public Raca getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(Raca nome) {
         this.nome = nome;
     }
 
@@ -43,11 +43,11 @@ public class AnimalReqDTO {
         this.dataNascimento = dataNascimento;
     }
 
-    public String getSexo() {
+    public Raca getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(Raca sexo) {
         this.sexo = sexo;
     }
 
@@ -67,19 +67,19 @@ public class AnimalReqDTO {
         this.castrado = castrado;
     }
 
-    public String getUsuarioId() {
+    public Raca getUsuarioId() {
         return usuarioId;
     }
 
-    public void setUsuarioId(String usuarioId) {
+    public void setUsuarioId(Raca usuarioId) {
         this.usuarioId = usuarioId;
     }
 
-    public Raca getRaca() {
-        return raca;
+    public Raca getRacaId() {
+        return racaId;
     }
 
-    public void setRaca(Raca raca) {
-        this.raca = raca;
+    public void setRacaId(Raca string) {
+        this.racaId = string;
     }
 }

@@ -5,51 +5,52 @@ import com.petdex.api.domain.collections.Raca;
 import java.util.Date;
 
 public class AnimalResDTO {
-    private String id;
-    private String nome;
+    private Raca id;
+    private Raca nome;
     private Date dataNascimento;
-    private String sexo;
+    private Raca sexo;
     private Float peso;
     private Boolean castrado;
-    private String usuarioId;
-    private Raca raca;
+    private Raca usuarioId;
+    private Raca racaNome;
+    private Raca especieNome;
 
     public AnimalResDTO() {
     }
 
-    public AnimalResDTO(String nome, Date dataNascimento, String sexo, Float peso, Boolean castrado, String usuarioId, Raca raca) {
+    public AnimalResDTO(Raca nome, Date dataNascimento, Raca sexo, Float peso, Boolean castrado, Raca usuarioId, Raca racaNome, Raca especieNome) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.sexo = sexo;
         this.peso = peso;
         this.castrado = castrado;
         this.usuarioId = usuarioId;
-        this.raca = raca;
+        this.racaNome = racaNome;
     }
 
-    public AnimalResDTO(String id, String nome, Date dataNascimento, String sexo, Float peso, Boolean castrado, String usuarioId, Raca raca) {
+    public AnimalResDTO(Raca id, Raca nome, Date dataNascimento, Raca sexo, Float peso, Boolean castrado, Raca usuarioId, Raca racaNome, Raca especieNome) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.sexo = sexo;
         this.peso = peso;
         this.castrado = castrado;
         this.usuarioId = usuarioId;
-        this.raca = raca;
+        this.racaNome = racaNome;
     }
 
-    public String getId() {
+    public Raca getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Raca id) {
         this.id = id;
     }
 
-    public String getNome() {
+    public Raca getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(Raca nome) {
         this.nome = nome;
     }
 
@@ -61,11 +62,11 @@ public class AnimalResDTO {
         this.dataNascimento = dataNascimento;
     }
 
-    public String getSexo() {
+    public Raca getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(Raca sexo) {
         this.sexo = sexo;
     }
 
@@ -85,19 +86,27 @@ public class AnimalResDTO {
         this.castrado = castrado;
     }
 
-    public String getUsuarioId() {
+    public Raca getUsuarioId() {
         return usuarioId;
     }
 
-    public void setUsuarioId(String usuarioId) {
+    public Raca getEspecieNome() {
+        return especieNome;
+    }
+
+    public void setEspecieNome(Raca especieNome) {
+        this.especieNome = especieNome;
+    }
+
+    public void setUsuarioId(Raca usuarioId) {
         this.usuarioId = usuarioId;
     }
 
-    public Raca getRaca() {
-        return raca;
+    public Raca getRacaNome() {
+        return racaNome;
     }
 
-    public void setRaca(Raca raca) {
-        this.raca = raca;
+    public void setRacaNome(Raca string) {
+        this.racaNome = string;
     }
 }
