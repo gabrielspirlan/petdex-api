@@ -7,35 +7,35 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "especies")
 public class Especie {
     @Id
-    private Raca id;
+    private String id;
     @NotBlank(message = "Nome não pode ser nulo ou vazio")
-    private Raca nome;
+    private String nome;
 
     public Especie() {
     }
 
-    public Especie(Raca nome) {
+    public Especie(String nome) {
         this.nome = nome;
     }
 
-    public Especie(Raca id, Raca nome) {
+    public Especie(String id, String nome) {
         this.id = id;
         this.nome = nome;
     }
 
-    public Raca getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Raca id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Raca getNome() {
+    public String getNome() {
         return nome;
     }
 
-    public void setNome(Raca nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 }
