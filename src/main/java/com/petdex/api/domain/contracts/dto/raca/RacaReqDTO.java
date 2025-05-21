@@ -1,18 +1,16 @@
 package com.petdex.api.domain.contracts.dto.raca;
 
-import com.petdex.api.domain.collections.Especie;
-
 public class RacaReqDTO {
 
     private String nome;
-    private Especie especie;
+    private String especieId;
 
     public RacaReqDTO() {
     }
 
-    public RacaReqDTO(String nome, Especie especie) {
+    public RacaReqDTO(String nome, String especieId) {
         this.nome = nome;
-        this.especie = especie;
+        this.especieId = especieId;
     }
 
     public String getNome() {
@@ -23,11 +21,11 @@ public class RacaReqDTO {
         this.nome = nome;
     }
 
-    public Especie getEspecie() {
-        return especie;
+    public String getEspecieId() {
+        return especieId;
     }
 
-    public void setEspecie(Especie especie) {
-        this.especie = especie;
+    public void setEspecieId(String especieId) {
+        this.especieId = especieId;
     }
 }

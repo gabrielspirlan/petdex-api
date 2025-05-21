@@ -10,6 +10,6 @@ public interface IRacaService {
     RacaResDTO findById(String id);
     Page<RacaResDTO> findAll (PageDTO pageDTO);
     RacaResDTO create (RacaReqDTO racaReqDTO);
-    RacaResDTO update (RacaReqDTO racaReqDTO);
+    RacaResDTO update (String id, RacaReqDTO racaReqDTO);
     void delete (String id);
 }
