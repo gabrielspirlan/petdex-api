@@ -4,6 +4,8 @@ import com.petdex.api.application.services.animal.IAnimalService;
 import com.petdex.api.domain.contracts.dto.PageDTO;
 import com.petdex.api.domain.contracts.dto.animal.AnimalReqDTO;
 import com.petdex.api.domain.contracts.dto.animal.AnimalResDTO;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/animais")
+@Tag(name = "Animal", description = "Operações de gestão envolvendo animais")
 public class AnimalController {
 
     @Autowired
@@ -34,6 +37,7 @@ public class AnimalController {
         );
     }
 
+    @Operation(summary = "Cadastrar um animal")
     @PostMapping
     public ResponseEntity<AnimalResDTO> create (@RequestBody AnimalReqDTO animalReqDTO) {
         return new ResponseEntity<>(
@@ -42,7 +46,8 @@ public class AnimalController {
         );
     }
 
-    @PostMapping("/{id}")
+    @Operation(summary = "Atualizar o cadastro de um animal")
+    @PutMapping("/{id}")
     public ResponseEntity<AnimalResDTO> update (@PathVariable String id, @RequestBody AnimalReqDTO animalReqDTO) {
         return new ResponseEntity<>(
                 animalService.update(id, animalReqDTO),

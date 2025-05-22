@@ -4,6 +4,8 @@ import com.petdex.api.application.services.especie.IEspecieService;
 import com.petdex.api.domain.contracts.dto.PageDTO;
 import com.petdex.api.domain.contracts.dto.especie.EspecieReqDTO;
 import com.petdex.api.domain.contracts.dto.especie.EspecieResDTO;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/especies")
+@Tag(name = "Especie", description = "Operações de gestão envolvendo especies")
 public class EspecieController {
 
     @Autowired
@@ -32,6 +35,7 @@ public class EspecieController {
         );
     }
 
+    @Operation(summary = "Cadastrar uma nova espécie")
     @PostMapping()
     public ResponseEntity<EspecieResDTO> create (@RequestBody EspecieReqDTO especieReqDTO) {
         return new ResponseEntity<>(
@@ -40,7 +44,8 @@ public class EspecieController {
         );
     }
 
-    @PostMapping("/{id}")
+    @Operation(summary = "Atualizar o cadastro de uma especie")
+    @PutMapping("/{id}")
     public ResponseEntity<EspecieResDTO> update (@PathVariable String id, @RequestBody EspecieReqDTO especieReqDTO) {
         return new ResponseEntity<>(
                 especieService.update(id, especieReqDTO),

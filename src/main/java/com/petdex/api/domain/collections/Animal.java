@@ -11,30 +11,30 @@ import java.util.Date;
 @Document(collection = "animais")
 public class Animal {
     @Id
-    private Raca id;
+    private String id;
 
     @NotBlank(message = "Nome não pode ser nulo ou vazio")
-    private Raca nome;
+    private String nome;
     @NotBlank(message = "Data de nascimento não pode ser nulo ou vazio")
     private Date dataNascimento;
     @Pattern(regexp = "M|F", message = "O sexo deve ser M (MACHO) ou F (FÊMEA)")
     @NotBlank(message = "Sexo não pode ser nulo ou vazio")
-    private Raca sexo;
+    private String sexo;
     @NotBlank(message = "Peso não pode ser nulo ou vazio")
     @Positive(message = "Peso deve ser um número positivo e maior que zero")
     private Float peso;
     @NotBlank(message = "Castrado não pode ser nulo ou vazio")
     private Boolean castrado;
     @NotBlank(message = "usuarioId não pode ser nulo ou vazio")
-    private Raca usuarioId;
+    private String usuarioId;
     @NotBlank(message = "racaId não pode ser nulo ou vazio")
-    private Raca racaId;
+    private String racaId;
 
 
     public Animal() {
     }
 
-    public Animal(Raca id, Raca nome, Date dataNascimento, Raca sexo, Float peso, Boolean castrado, Raca usuarioId, Raca racaId) {
+    public Animal(String id, String nome, Date dataNascimento, String sexo, Float peso, Boolean castrado, String usuarioId, String racaId) {
         this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
@@ -45,7 +45,7 @@ public class Animal {
         this.racaId = racaId;
     }
 
-    public Animal(Raca nome, Date dataNascimento, Raca sexo, Float peso, Boolean castrado, Raca usuarioId, Raca racaId) {
+    public Animal(String nome, Date dataNascimento, String sexo, Float peso, Boolean castrado, String usuarioId, String racaId) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.sexo = sexo;
@@ -55,19 +55,19 @@ public class Animal {
         this.racaId = racaId;
     }
 
-    public Raca getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Raca id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Raca getNome() {
+    public String getNome() {
         return nome;
     }
 
-    public void setNome(Raca nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -79,11 +79,11 @@ public class Animal {
         this.dataNascimento = dataNascimento;
     }
 
-    public Raca getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(Raca sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
@@ -103,19 +103,19 @@ public class Animal {
         this.castrado = castrado;
     }
 
-    public Raca getUsuarioId() {
+    public String getUsuarioId() {
         return usuarioId;
     }
 
-    public void setUsuarioId(Raca usuarioId) {
+    public void setUsuarioId(String usuarioId) {
         this.usuarioId = usuarioId;
     }
 
-    public Raca getRacaId() {
+    public String getRacaId() {
         return racaId;
     }
 
-    public void setRacaId(Raca string) {
+    public void setRacaId(String string) {
         this.racaId = string;
     }
 }

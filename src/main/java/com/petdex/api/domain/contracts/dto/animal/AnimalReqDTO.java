@@ -6,18 +6,18 @@ import java.util.Date;
 
 public class AnimalReqDTO {
 
-    private Raca nome;
+    private String nome;
     private Date dataNascimento;
-    private Raca sexo;
+    private String sexo;
     private Float peso;
     private Boolean castrado;
-    private Raca usuarioId;
-    private Raca racaId;
+    private String usuarioId;
+    private String racaId;
 
     public AnimalReqDTO() {
     }
 
-    public AnimalReqDTO(Raca nome, Date dataNascimento, Raca sexo, Float peso, Boolean castrado, Raca usuarioId, Raca racaId) {
+    public AnimalReqDTO(String nome, Date dataNascimento, String sexo, Float peso, Boolean castrado, String usuarioId, String racaId) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.sexo = sexo;
@@ -27,11 +27,11 @@ public class AnimalReqDTO {
         this.racaId = racaId;
     }
 
-    public Raca getNome() {
+    public String getNome() {
         return nome;
     }
 
-    public void setNome(Raca nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -43,11 +43,11 @@ public class AnimalReqDTO {
         this.dataNascimento = dataNascimento;
     }
 
-    public Raca getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(Raca sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
@@ -67,19 +67,19 @@ public class AnimalReqDTO {
         this.castrado = castrado;
     }
 
-    public Raca getUsuarioId() {
+    public String getUsuarioId() {
         return usuarioId;
     }
 
-    public void setUsuarioId(Raca usuarioId) {
+    public void setUsuarioId(String usuarioId) {
         this.usuarioId = usuarioId;
     }
 
-    public Raca getRacaId() {
+    public String getRacaId() {
         return racaId;
     }
 
-    public void setRacaId(Raca string) {
+    public void setRacaId(String string) {
         this.racaId = string;
     }
 }

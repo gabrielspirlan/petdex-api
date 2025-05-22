@@ -59,7 +59,7 @@ public class ColeiraService implements IColeiraService{
     public ColeiraResDTO create(ColeiraReqDTO coleiraReqDTO) {
 
         Animal animal = animalRepository.findById(coleiraReqDTO.getAnimalId())
-                .orElseThrow(() -> new HttpServerErrorException(HttpStatus.NOT_FOUND, "Não existe aniaml com o ID: "+ coleiraReqDTO.getAnimalId()));
+                .orElseThrow(() -> new HttpServerErrorException(HttpStatus.NOT_FOUND, "Não existe animal com o ID: "+ coleiraReqDTO.getAnimalId()));
 
         return mapper.map(coleiraRepository.save(mapper.map(coleiraReqDTO, Coleira.class)), ColeiraResDTO.class);
     }

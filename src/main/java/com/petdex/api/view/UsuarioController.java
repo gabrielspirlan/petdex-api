@@ -4,6 +4,8 @@ import com.petdex.api.application.services.usuario.IUsuarioService;
 import com.petdex.api.domain.contracts.dto.PageDTO;
 import com.petdex.api.domain.contracts.dto.usuario.UsuarioReqDTO;
 import com.petdex.api.domain.contracts.dto.usuario.UsuarioResDTO;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("usuarios")
+@Tag(name = "Usuário", description = "Operações de gestão envolvendo usuários")
 public class UsuarioController {
 
     @Autowired
@@ -34,6 +37,7 @@ public class UsuarioController {
         );
     }
 
+    @Operation(summary = "Cadastrar um novo usuário")
     @PostMapping("")
     public ResponseEntity<UsuarioResDTO> create (@RequestBody UsuarioReqDTO usuarioReqDTO) {
         return new ResponseEntity<>(
@@ -42,7 +46,8 @@ public class UsuarioController {
         );
     }
 
-    @PostMapping("/{id}")
+    @Operation(summary = "Atualizar o cadastro de um usuário")
+    @PutMapping("/{id}")
     public ResponseEntity<UsuarioResDTO> update (@PathVariable String id, @RequestBody UsuarioReqDTO usuarioReqDTO){
         return new ResponseEntity<>(
                 usuarioService.update(id, usuarioReqDTO),
